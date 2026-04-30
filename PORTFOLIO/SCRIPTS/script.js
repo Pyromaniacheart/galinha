@@ -1,0 +1,1 @@
+const botão = document.getElementById(modoClaroModoescuro)
