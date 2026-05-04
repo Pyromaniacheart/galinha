@@ -5,7 +5,18 @@ let tituloProfissional = "Garoto de Programa / Faço de Tudo";
 let minhaBio = "sou um cara esforçado. Agora sou baterista" +
  "Antes eu não era nada."
 let anoFormatura = 2028;
+
+let mesFormatura = 12;
+let diaFormatura = 31;
 let anoIngresso = 2025;
+let mesIngresso = 1;
+let diaIngresso = 1;
+
+let dataAual = new Date(); //Data Atual, data completa, biblioteca de dados do javascript
+let mesAtual = dataAual.getMonth() +1; //Mês atual (0-11, por isso +1)
+let anoAtual = dataAual.getFullYear(); //ano atual
+let diaAtual = dataAual.getDate(); //dia atual
+
 let indefinido;
 let nulo = null;
 let curso = {
@@ -25,4 +36,7 @@ console.log(typeof curso);
 document.getElementById("meuNome").innerText = NOME;
 document.getElementById("tituloProfissional").innerText = tituloProfissional;
 document.getElementById("minhaBio").innerText = minhaBio;
-document.getElementById("anoFormatura").innerText = anoFormatura;
+document.getElementById("anoFormatura").innerText = "Ano de Formatura: " + anoFormatura;
+document.getElementById("tempoRestante").innerText = "Tempo Restante: " + (anoFormatura - anoAtual) + " anos";
+
+
