@@ -1,4 +1,4 @@
-const botão = document.getElementById(modoClaroModoescuro);
+const botão = document.getElementById("modoEscuroClaro");
 
 const NOME = "Anderson Bernardo";
 let tituloProfissional = "Garoto de Programa / Faço de Tudo";
@@ -37,6 +37,26 @@ document.getElementById("meuNome").innerText = NOME;
 document.getElementById("tituloProfissional").innerText = tituloProfissional;
 document.getElementById("minhaBio").innerText = minhaBio;
 document.getElementById("anoFormatura").innerText = "Ano de Formatura: " + anoFormatura;
-document.getElementById("tempoRestante").innerText = "Tempo Restante: " + (anoFormatura - anoAtual) + " anos";
+// document.getElementById("tempoRestante").innerText = "Tempo Restante: " + (anoFormatura - anoAtual) + " anos";
 
+//Se anos para formatura for 0 ou <0 não imprima os anos
+if (anoFormatura - anoAtual <= 0) {
+    document.getElementById("tempoRestante").innerText = "-";
+} else if (anoFormatura - anoAtual === 1) {
+    document.getElementById("tempoRestante").innerText = `Tempo restante para formatura: ${anoFormatura - anoAtual} ano`;
+} else {
+    document.getElementById("tempoRestante").innerText = `Tempo restante para formatura: ${anoFormatura - anoAtual} anos`;
+}
 
+let diasRestantes = diaFormatura -diaAtual;
+let mesesRestantes = mesFormatura - mesAtual;
+let anosRestantes = anoFormatura - anoAtual;
+
+if (diasRestantes <=0 && mesesRestantes <=0 && anosRestantes <=0) {
+    document.getElementById("tempoRestante").innerText = "Curso concluído!";
+};
+
+let nota = 0;
+let aprovado = (nota >= 6)? "Aprovado" : "Reprovado";
+
+document.write(`<p>Nota: ${nota} - ${aprovado}</p>`);
